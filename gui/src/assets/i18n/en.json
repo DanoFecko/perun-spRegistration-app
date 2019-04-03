@@ -5,6 +5,8 @@
   "HOME_PAGE" : "Home",
   "LOGIN_MESSAGE": "For continuing to the application, please login.",
   "LOGIN": "Login",
+  "YES": "Yes",
+  "NO": "No",
   "ERROR": {
     "GENERAL_ERROR_TITLE": "Something went wrong.",
     "SERVER_DOWN": "Server is currently offline. Please try it again later."
@@ -77,7 +79,12 @@
       "UPDATE_FACILITY": "Update facility",
       "DELETE_FACILITY" : "Delete facility",
       "MOVE_TO_PRODUCTION": "Move to production"
-    }
+    },
+    "EDIT_REQUEST" : "Edit",
+    "SET_WFC": "Status set for WFC",
+    "APPROVED": "Request approved",
+    "REJECTED": "Request rejected",
+    "ARE_YOU_SURE": "Are you sure?"
   },
   "FACILITIES": {
     "TITLE": "Facilities",

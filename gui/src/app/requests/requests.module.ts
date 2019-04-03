@@ -15,6 +15,8 @@ import { RequestDetailComponent } from './request-detail/request-detail.componen
 import { RequestItemValuePipe } from './request-item-value.pipe';
 import { AllRequestsComponent } from './all-requests/all-requests.component';
 import {RequestCreationStepComponent} from "./new-request/request-creation-step/request-creation-step.component";
+import { RequestDetailDialogComponent } from './request-detail/request-detail-dialog/request-detail-dialog.component';
+import {MatDialogModule} from "@angular/material";
 import { RequestStatusPipe } from './request-status.pipe';
 import { RequestActionPipe } from './request-action.pipe';
 
@@ -22,7 +24,8 @@ import { RequestActionPipe } from './request-action.pipe';
   imports: [
     CommonModule,
     RequestsRoutingModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule
   ],
   declarations: [
     RequestsOverviewComponent,
@@ -38,7 +41,12 @@ import { RequestActionPipe } from './request-action.pipe';
     RequestCreationStepComponent,
     AllRequestsComponent,
     RequestStatusPipe,
-    RequestActionPipe
+    RequestActionPipe,
+    AllRequestsComponent,
+    RequestDetailDialogComponent
+  ],
+  entryComponents: [
+    RequestDetailDialogComponent
   ]
 })
 export class RequestsModule { }
