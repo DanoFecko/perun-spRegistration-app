@@ -24,10 +24,10 @@ const routes: Routes = [
     path: 'detail/:id',
     component: RequestDetailComponent
   },
-    {
-        path: 'editRequest/:id',
-        component: RequestEditComponent
-    },
+  {
+    path: 'editRequest/:id',
+    component: RequestEditComponent
+  },
   {
     path: '**',
     component: NotFoundPageComponent

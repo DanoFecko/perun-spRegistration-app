@@ -63,7 +63,11 @@
     "REQUEST_CHANGES_COMMENT" : "Comment",
     "REQUEST_ERROR" : "Some error happened",
     "SET_REQUEST_WFA" : "Set status to Waiting for approval",
-    "EDIT_REQUEST" : "Edit"
+    "EDIT_REQUEST" : "Edit",
+    "CHANGED_TO_WFC": "Request status changed to 'Waiting for changes'",
+    "SHOW_MORE": "Show more",
+    "SHOW_LESS": "Show less",
+    "COMMENTS_FROM_ADMIN": "Comments from administrator"
   },
   "FACILITIES": {
     "TITLE": "Facilities",

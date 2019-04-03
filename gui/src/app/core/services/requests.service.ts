@@ -48,4 +48,8 @@ export class RequestsService {
   askForApproval(id: number ): Observable<boolean> {
     return this.apiService.get(`/askApproval/${id}`);
   }
+
+  updateRequest(id: number, attributes: PerunAttribute[]): Observable<boolean>{
+    return this.apiService.post(`/update/${id}`, attributes)
+  }
 }
