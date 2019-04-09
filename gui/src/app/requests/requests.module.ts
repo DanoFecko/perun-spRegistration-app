@@ -16,7 +16,8 @@ import { RequestItemValuePipe } from './request-item-value.pipe';
 import { AllRequestsComponent } from './all-requests/all-requests.component';
 import {RequestCreationStepComponent} from "./new-request/request-creation-step/request-creation-step.component";
 import { RequestEditComponent } from './request-edit/request-edit.component';
-import { RequestDetailBottomSheetComponent } from './request-detail/request-detail-bottom-sheet/request-detail-bottom-sheet.component';
+import { RequestStatusPipe } from './request-status.pipe';
+import { RequestActionPipe } from './request-action.pipe';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { RequestDetailBottomSheetComponent } from './request-detail/request-deta
     RequestCreationStepComponent,
     AllRequestsComponent,
     RequestEditComponent,
-    RequestDetailBottomSheetComponent
+    RequestStatusPipe,
+    RequestActionPipe
   ]
 })
 export class RequestsModule { }

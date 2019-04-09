@@ -3,6 +3,7 @@ import { ApiService } from "./api.service";
 import { Observable } from "rxjs";
 import { Request } from "../models/Request";
 import {PerunAttribute} from "../models/PerunAttribute";
+import {RequestSignature} from "../models/RequestSignature";
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,9 @@ export class RequestsService {
 
   updateRequest(id: number, attributes: PerunAttribute[]): Observable<boolean>{
     return this.apiService.post(`/update/${id}`, attributes)
+  }
+
+  getSignatures(id: number): Observable<RequestSignature[]> {
+    return this.apiService.get(`/viewApprovals/${id}`);
   }
 }
