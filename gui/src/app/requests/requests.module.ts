@@ -17,6 +17,7 @@ import { AllRequestsComponent } from './all-requests/all-requests.component';
 import {RequestCreationStepComponent} from "./new-request/request-creation-step/request-creation-step.component";
 import { RequestDetailDialogComponent } from './request-detail/request-detail-dialog/request-detail-dialog.component';
 import {MatDialogModule} from "@angular/material";
+import { RequestEditComponent } from './request-edit/request-edit.component';
 import { RequestStatusPipe } from './request-status.pipe';
 import { RequestActionPipe } from './request-action.pipe';
 
@@ -40,6 +41,7 @@ import { RequestActionPipe } from './request-action.pipe';
     RequestItemValuePipe,
     RequestCreationStepComponent,
     AllRequestsComponent,
+    RequestEditComponent,
     RequestStatusPipe,
     RequestActionPipe,
     AllRequestsComponent,

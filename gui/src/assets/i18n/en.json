@@ -65,7 +65,7 @@
     "REQUEST_CHANGES_COMMENT" : "Comment",
     "REQUEST_ERROR" : "Some error happened",
     "SET_REQUEST_WFA" : "Set status to Waiting for approval",
-    "EDIT_REQUEST" : "Edit",
+    "EDIT_REQUEST" : "Edit request",
     "USERS_WHO_SIGNED": "Users who signed this request: ",
     "SIGN_REQUEST_NO_SIGN": "This request was not signed by anyone yet",
     "STATUSPIPE": {
@@ -77,10 +77,13 @@
     "ACTIONPIPE": {
       "REGISTER_NEW_SP": "Register new SP",
       "UPDATE_FACILITY": "Update facility",
-      "DELETE_FACILITY" : "Delete facility",
+      "DELETE_FACILITY": "Delete facility",
       "MOVE_TO_PRODUCTION": "Move to production"
     },
-    "EDIT_REQUEST" : "Edit",
+    "CHANGED_TO_WFC": "Request status changed to 'Waiting for changes'",
+    "SHOW_MORE": "Show more",
+    "SHOW_LESS": "Show less",
+    "COMMENTS_FROM_ADMIN": "Comments from administrator",
     "SET_WFC": "Status set for WFC",
     "APPROVED": "Request approved",
     "REJECTED": "Request rejected",
@@ -116,6 +119,7 @@
     "DOCUMENT_SIGN_TITLE": "Sign request for move to production",
     "DOCUMENT_SIGN_SUCCESS": "Request was signed",
     "DOCUMENT_SIGN_GO_TO_FACILITY_DETAIL": "go to facility detail",
-    "MOVE_TO_PRODUCTION_IN_PROGRESS": "Request for this facility is waiting for approval"
+    "MOVE_TO_PRODUCTION_IN_PROGRESS": "Request for this facility is waiting for approval",
+    "ARE_YOU_SURE_DELETE": "Are you sure you want to delete facility:"
   }
 }

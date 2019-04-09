@@ -63,7 +63,7 @@
     "REQUEST_CHANGES_COMMENT" : "Komentář",
     "REQUEST_ERROR" : "Něco se pokazilo",
     "SET_REQUEST_WFA" : "Změnit stav na 'Čeká na schválení'",
-    "EDIT_REQUEST" : "Upravit",
+    "EDIT_REQUEST" : "Upravit žádost",
     "USERS_WHO_SIGNED": "Uživatelé, kteří podepsali tuto žádost: ",
     "SIGN_REQUEST_NO_SIGN": "Tato žádost ještě nebyla nikým podepsána",
     "STATUSPIPE": {
@@ -78,6 +78,10 @@
       "DELETE_FACILITY" : "Smazat facility",
       "MOVE_TO_PRODUCTION": "Přesunout do produkce"
     },
+    "CHANGED_TO_WFC": "Status žádosti změnen na 'Čeká na změny'",
+    "SHOW_MORE": "Ukáž víc",
+    "SHOW_LESS": "Ukáž míň",
+    "COMMENTS_FROM_ADMIN": "Komentáře od administrátora",
     "SET_WFC": "Status nastaven na 'Čeká na změny'",
     "APPROVED": "Žádost schválena",
     "REJECTED": "Žádost zamítnuta",
@@ -113,6 +117,7 @@
     "DOCUMENT_SIGN_TITLE": "Podepsání žádosti o přesun do produkce",
     "DOCUMENT_SIGN_SUCCESS": "Žádost byla podepsána",
     "DOCUMENT_SIGN_GO_TO_FACILITY_DETAIL": "Přejít na detail facility",
-    "MOVE_TO_PRODUCTION_IN_PROGRESS": "Žádost pro tuto facility čeká na schválení"
+    "MOVE_TO_PRODUCTION_IN_PROGRESS": "Žádost pro tuto facility čeká na schválení",
+    "ARE_YOU_SURE_DELETE": "Jste si jistý, že chcete vymazat facility:"
   }
 }
