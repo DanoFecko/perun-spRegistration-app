@@ -46,7 +46,7 @@ export class RequestDetailComponent implements OnInit {
     inputField: NgModel;
 
     successApproveMessage: string;
-    successRejcetMessage: string;
+    successRejectMessage: string;
     successSetWFCMessage: string;
     noCommentErrorMessage: string;
 
@@ -91,7 +91,7 @@ export class RequestDetailComponent implements OnInit {
             });
         });
         this.translate.get("REQUEST.REQUEST_ERROR").subscribe(value => this.noCommentErrorMessage = value);
-        this.translate.get("REQUEST.REJECTED").subscribe(value => this.successRejcetMessage = value);
+        this.translate.get("REQUEST.REJECTED").subscribe(value => this.successRejectMessage = value);
         this.translate.get("REQUEST.APPROVED").subscribe(value => this.successApproveMessage = value);
         this.translate.get("REQUEST.SET_WFC").subscribe(value => this.successSetWFCMessage = value);
         this.isUserAdmin = AppComponent.isUserAdmin();
@@ -103,7 +103,7 @@ export class RequestDetailComponent implements OnInit {
 
     openApproveDialog(): void {
       const dialogRef = this.dialog.open(RequestDetailDialogComponent, {
-        width: '200px',
+        width: '250px',
         data: {isApprove: true, parent: this}
       });
 
@@ -124,44 +124,41 @@ export class RequestDetailComponent implements OnInit {
     }
 
     reject() {
-        if (this.isUserAdmin) {
-            this.requestsService.rejectRequest(this.request.reqId).subscribe(bool => {
-                this.snackBar.open(this.successRejcetMessage, null, {duration: 6000});
-            }, error => {
-                console.log("Error");
-                console.log(error);
-            });
-        }
+      this.requestsService.rejectRequest(this.request.reqId).subscribe(bool => {
+        this.snackBar.open(this.successRejectMessage, null, {duration: 6000});
+        this.ngOnInit()
+        }, error => {
+        console.log("Error");
+        console.log(error);
+      });
+
     }
 
     approve() {
-        if (this.isUserAdmin) {
-            this.requestsService.approveRequest(this.request.reqId).subscribe(bool => {
-                this.snackBar.open(this.successApproveMessage, null, {duration: 6000});
-            }, error => {
-                console.log("Error");
-                console.log(error);
-            });
-        }
+      this.requestsService.approveRequest(this.request.reqId).subscribe(bool => {
+        this.snackBar.open(this.successApproveMessage, null, {duration: 6000});
+        this.ngOnInit()
+        }, error => {
+        console.log("Error");
+        console.log(error);
+      });
     }
 
     requestChanges() {
-        if (this.isUserAdmin) {
-            for (let item of this.requestItems) {
-                this.request.attributes[item.urn].comment = item.comment;
-            }
-            let array: Array<PerunAttribute> = [];
-            for (const [key, value] of Object.entries(this.request.attributes)) {
-                if ((value.comment != "") && (value.comment != null)) {
-                    array.push(value)
-                }
-            }
-            this.requestsService.askForChanges(this.request.reqId, array).subscribe(bool => {
-                this.snackBar.open(this.successSetWFCMessage, null, {duration: 6000});
-            }, error => {
-                console.log("Error");
-                console.log(error);
-            });
+      for (let item of this.requestItems) {
+        this.request.attributes[item.urn].comment = item.comment;
+      }
+      let array: Array<PerunAttribute> = [];
+      for (const [key, value] of Object.entries(this.request.attributes)) {
+        if ((value.comment != "") && (value.comment != null)) {
+          array.push(value)
         }
+      }
+      this.requestsService.askForChanges(this.request.reqId, array).subscribe(bool => {
+        this.snackBar.open(this.successSetWFCMessage, null, {duration: 6000});
+      }, error => {
+        console.log("Error");
+        console.log(error);
+      });
     }
 }

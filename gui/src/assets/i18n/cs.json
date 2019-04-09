@@ -77,7 +77,12 @@
       "UPDATE_FACILITY": "Upravit facility",
       "DELETE_FACILITY" : "Smazat facility",
       "MOVE_TO_PRODUCTION": "Přesunout do produkce"
-    }
+    },
+    "SET_WFC": "Status nastaven na 'Čeká na změny'",
+    "APPROVED": "Žádost schválena",
+    "REJECTED": "Žádost zamítnuta",
+    "ARE_YOU_SURE_APPROVE": "Jste si jistý, že chcete schvalit tuhle žádost?",
+    "ARE_YOU_SURE_REJECT": "Jste si jistý, že chcete zamítnout tuhle žádost?"
   },
   "FACILITIES": {
     "TITLE": "Facility",

@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {DialogData} from "../request-detail.component";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-request-detail-dialog',
@@ -11,7 +12,11 @@ export class RequestDetailDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<RequestDetailDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    private translate: TranslateService,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+
+  areUsure: string;
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -26,6 +31,11 @@ export class RequestDetailDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.data.isApprove) {
+      this.translate.get("REQUEST.ARE_YOU_SURE_APPROVE").subscribe(value => this.areUsure = value);
+    } else {
+      this.translate.get("REQUEST.ARE_YOU_SURE_REJECT").subscribe(value => this.areUsure = value);
+    }
   }
 
 }
