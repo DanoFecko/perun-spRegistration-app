@@ -6,6 +6,7 @@ import {FacilityMoveToProductionComponent} from "./facilities-detail/facility-mo
 import {NotFoundPageComponent} from "../shared/not-found-page/not-found-page.component";
 import {FacilityAddAdminComponent} from "./facilities-detail/facility-add-admin/facility-add-admin.component";
 import {FacilityAddAdminSignComponent} from "./facilities-detail/facility-add-admin/facility-add-admin-sign/facility-add-admin-sign.component";
+import {FacilitiesEditComponent} from "./facilities-edit/facilities-edit.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'moveToProduction/:id',
     component: FacilityMoveToProductionComponent
+  },
+  {
+    path: 'edit/:id',
+    component: FacilitiesEditComponent
   },
   {
     path: 'addAdmin/sign',
