@@ -1,7 +1,6 @@
 package cz.metacentrum.perun.spRegistration.service;
 
-import cz.metacentrum.perun.spRegistration.persistence.exceptions.MitreIDApiException;
-import cz.metacentrum.perun.spRegistration.persistence.exceptions.RPCException;
+import cz.metacentrum.perun.spRegistration.persistence.exceptions.ConnectorException;
 import cz.metacentrum.perun.spRegistration.persistence.models.Facility;
 import cz.metacentrum.perun.spRegistration.persistence.models.PerunAttribute;
 import cz.metacentrum.perun.spRegistration.persistence.models.Request;
@@ -28,7 +27,7 @@ public interface AdminCommandsService {
 	 * @throws CannotChangeStatusException when status of the request cannot be changed.
 	 */
 	boolean approveRequest(Long requestId, Long userId)
-			throws UnauthorizedActionException, CannotChangeStatusException, InternalErrorException, RPCException, MitreIDApiException;
+			throws UnauthorizedActionException, CannotChangeStatusException, InternalErrorException, ConnectorException;
 
 	/**
 	 * Reject request.
@@ -56,14 +55,6 @@ public interface AdminCommandsService {
 			throws UnauthorizedActionException, CannotChangeStatusException, InternalErrorException;
 
 	/**
-	 * Get approvals for request to transfer to production.
-	 * @param requestId ID of request.
-	 * @param userId ID of user (ADMIN) displaying the approvals.
-	 * @return List of approvals.
-	 */
-	List<RequestSignature> getApprovalsOfProductionTransfer(Long requestId, Long userId) throws UnauthorizedActionException;
-
-	/**
 	 * Get all requests stored in system.
 	 * @param adminId ID of admin.
 	 * @return List of found requests.
@@ -77,6 +68,6 @@ public interface AdminCommandsService {
 	 * @return List of found facilities.
 	 * @throws UnauthorizedActionException when user is not authorized to perform this action.
 	 */
-	List<Facility> getAllFacilities(Long adminId) throws UnauthorizedActionException, RPCException;
+	List<Facility> getAllFacilities(Long adminId) throws UnauthorizedActionException, ConnectorException;
 
 }

@@ -2,6 +2,8 @@ package cz.metacentrum.perun.spRegistration.persistence.configs;
 
 import cz.metacentrum.perun.spRegistration.persistence.models.PerunAttributeDefinition;
 import cz.metacentrum.perun.spRegistration.persistence.connectors.PerunConnector;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -31,10 +33,6 @@ public class AppConfig {
 	private Map<String, PerunAttributeDefinition> perunAttributeDefinitionsMap = new HashMap<>();
 	private boolean oidcEnabled;
 	private List<String> langs = new ArrayList<>();
-
-	private final Properties enLocale = new Properties();
-	private final Properties csLocale = new Properties();
-
 	private PerunConnector connector;
 	private String showOnServicesListAttribute;
 	private String testSpAttribute;
@@ -48,15 +46,30 @@ public class AppConfig {
 	private boolean specifyAuthoritiesEnabled;
 	private String signaturesEndpointUrl;
 	private String adminsEndpoint;
+	private String entityIdAttrName;
+	private Properties enLocale;
+	private Properties csLocale;
 
-	public AppConfig() {
+	@Autowired
+	public AppConfig(@Qualifier("enLocale") Properties enLocale, @Qualifier("csLocale") Properties csLocale) {
+		this.enLocale = new Properties();
+		this.csLocale = new Properties();
+
 		Resource enLang = new ClassPathResource("localization.properties");
 		Resource csLang = new ClassPathResource("localization_cs.properties");
 		try (InputStream en = enLang.getInputStream(); InputStream cs = csLang.getInputStream()) {
-			enLocale.load(en);
-			csLocale.load(cs);
+			this.enLocale.load(en);
+			this.csLocale.load(cs);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot load translations", e);
+		}
+
+		if (enLocale != null) {
+			this.enLocale.putAll(enLocale);
+		}
+
+		if (csLocale != null) {
+			this.enLocale.putAll(csLocale);
 		}
 	}
 
@@ -246,6 +259,14 @@ public class AppConfig {
 		return adminsEndpoint;
 	}
 
+	public String getEntityIdAttrName() {
+		return entityIdAttrName;
+	}
+
+	public void setEntityIdAttrName(String entityIdAttrName) {
+		this.entityIdAttrName = entityIdAttrName;
+	}
+
 	@Override
 	public String toString() {
 		return "idpAttribute: '" + idpAttribute + "'\n" +
@@ -288,7 +309,7 @@ public class AppConfig {
 		return perunAttributeDefinitionsMap.get(fullName);
 	}
 
-	public boolean isAdmin (Long userId) {
+	public boolean isAppAdmin(Long userId) {
 		return admins.contains(userId);
 	}
 

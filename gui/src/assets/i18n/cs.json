@@ -7,20 +7,24 @@
   "LOGIN": "Přihlásit se",
   "ERROR": {
     "GENERAL_ERROR_TITLE": "Něco se pokazilo.",
-    "SERVER_DOWN": "Aplikace momentálně není dostupná. Zkuste to prosím později."
+    "SERVER_DOWN": "Aplikace momentálně není dostupná. Zkuste to prosím později.",
+  "CLOSE": "Zavřít"
   },
   "MENU": {
     "HOME": "Domů",
     "REQUESTS": "Žádosti",
-    "FACILITIES": "Facility",
-    "NEW_REQUEST": "Nová žádost",
+    "ADMIN": "Admin",
+    "ALL_FACILITIES": "Všechny facility",
+    "SERVICES": "Služby",
+    "MY_SERVICES": "Mé služby(facility)",
+    "REGISTER_SERVICE": "Registrovat službu",
     "MY_REQUESTS": "Mé žádosti",
     "ALL_REQUESTS": "Všechny žádosti",
     "MY_FACILITIES": "Mé facility"
   },
   "REQUESTS": {
     "TITLE": "Mé žádosti",
-    "YOUR_REQUESTS": "Vaše žádosti",
+    "MY_REQUESTS": "Mé žádosti",
     "ALL_REQUESTS": "Všechny žádosti",
     "ID": "Id",
     "FACILITY_ID": "Facility ID",
@@ -38,13 +42,13 @@
     "MAP_KEY": "Klíč",
     "MAP_VALUE": "Hodnota",
     "LIST_VALUE": "Hodnota",
-    "NEW_TITLE": "Podat novou žádost",
+    "NEW_TITLE": "Registrovat novou žádost",
     "NEW_INVALID_VALUE" : "Zadaná hodnota je neplatná!",
-    "NEW_SELECT_TYPE": "Vyberte typ služby:",
+    "NEW_SELECT_TYPE": "Vyberte autentifikační protokol (SAML 2.0 / OpenID Connect)",
     "NEW_FILL_ATTRS": "Vyplňte informace:",
     "NEW_VALUES_ERROR_MESSAGE": "Prosím vyplňte všechna povinná pole.",
     "NEW_DUPLICIT_KEYS_ERROR" : "Hodnota klíče musí být unikátní!",
-    "NEW_NO_VALUE_ERROR": "Alespoň jedna hodnota musí být vyplněna!",
+    "NEW_NO_VALUE_ERROR": "Všechny hodnoty musí být vyplněny!",
     "NEW_NEXT_STEP": "Dále",
     "NEW_PREVIOUS_STEP": "Zpět",
     "REQUEST_SAVE": "Uložit",
@@ -87,11 +91,13 @@
     "APPROVED": "Žádost schválena",
     "REJECTED": "Žádost zamítnuta",
     "ARE_YOU_SURE_APPROVE": "Jste si jistý, že chcete schvalit tuhle žádost?",
-    "ARE_YOU_SURE_REJECT": "Jste si jistý, že chcete zamítnout tuhle žádost?"
+    "ARE_YOU_SURE_REJECT": "Jste si jistý, že chcete zamítnout tuhle žádost?",
+    "ARE_YOU_SURE_SET_WFC": "Jste si jistý, že chcete nastavit status na 'Čeká na změny'?"
   },
   "FACILITIES": {
     "TITLE": "Facility",
-    "YOUR_FACILITIES": "Mé facility",
+    "All_FACILITIES": "Všechny facility",
+    "MY_SERVICES": "Moje služby",
     "ID": "Id",
     "NAME": "Jméno",
     "DESCRIPTION": "Popis",
@@ -112,7 +118,7 @@
     "MOVE_TO_PRODUCTION_EMAIL": "Chci vyplnit emaily",
     "EMAIL_DESCRIPTION": "Vyplňte emaily, pro potvrzení emalu stiskněte klávesu Enter",
     "EMAIL_ERROR_FILL": "Vyplňte alespoň jeden email!",
-    "EMAIL_ERROR_CORRECT": "Vyplňte korektní email!",
+    "EMAIL_ERROR_CORRECT": "Vyplňte korektní email{{'REQUESTS.NEW_SELECT_TYPE' | translate}!",
     "MOVE_TO_PRODUCTION_TO_REQUEST": "Přejít na žádost",
     "MOVE_TO_PRODUCTION_APPROVE": "Schválit žádost",
     "DOCUMENT_SIGN_TITLE": "Podepsání žádosti o přesun do produkce",
@@ -128,6 +134,7 @@
     "ADD_ADMIN_SUCCES": "Stal jste se adminem",
     "NEW_VALUES_ERROR_MESSAGE": "Vyskytla se chyba",
     "SUCCESSFULLY_SUBMITTED_MESSAGE": "Facility byla uložená",
-    "SUCCESSFULLY_SUBMITTED_ACTION": "Zobraz"
+    "SUCCESSFULLY_SUBMITTED_ACTION": "Zobraz",
+    "WRONGLY_FILLED_ITEM": "Jedna nebo víc polí není vyplněna správne"
   }
 }

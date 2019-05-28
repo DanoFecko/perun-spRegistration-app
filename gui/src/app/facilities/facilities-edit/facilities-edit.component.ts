@@ -40,6 +40,7 @@ export class FacilitiesEditComponent implements OnInit {
   errorText: string;
   successfullySubmittedText: string;
   successActionText: string;
+  errorWronglyFilledItem: string;
 
   applicationItems: ApplicationItem[];
 
@@ -50,6 +51,8 @@ export class FacilitiesEditComponent implements OnInit {
       .subscribe(value => this.successfullySubmittedText = value);
     this.translate.get('FACILITIES.SUCCESSFULLY_SUBMITTED_ACTION')
       .subscribe(value => this.successActionText = value);
+    this.translate.get('FACILITIES.WRONGLY_FILLED_ITEM')
+      .subscribe(value => this.errorWronglyFilledItem = value);
     this.getAttributes();
   }
 
@@ -71,11 +74,20 @@ export class FacilitiesEditComponent implements OnInit {
 
     let perunAttributes: PerunAttribute[] = [];
 
+    //set to false when one attribute has wrong value
+    let allGood = true;
     this.items.forEach(i => {
       let attr = i.getAttribute();
       let perunAttr = new PerunAttribute(attr.value, attr.urn);
+      if(!i.hasCorrectValue()){
+        this.snackBar.open(this.errorWronglyFilledItem, null,{duration: 6000})
+        allGood = false;
+        return
+      }
       perunAttributes.push(perunAttr);
     });
+
+    if (!allGood){return}
 
     console.log(perunAttributes);
 
