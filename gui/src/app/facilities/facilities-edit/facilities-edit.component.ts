@@ -41,6 +41,7 @@ export class FacilitiesEditComponent implements OnInit {
   successfullySubmittedText: string;
   successActionText: string;
   errorWronglyFilledItem: string;
+  errorRequestAlreadyExists: string;
 
   applicationItems: ApplicationItem[];
 
@@ -53,6 +54,8 @@ export class FacilitiesEditComponent implements OnInit {
       .subscribe(value => this.successActionText = value);
     this.translate.get('FACILITIES.WRONGLY_FILLED_ITEM')
       .subscribe(value => this.errorWronglyFilledItem = value);
+    this.translate.get('FACILITIES.ERROR_REQUEST_ALREADY_EXISTS')
+      .subscribe(value => this.errorRequestAlreadyExists = value);
     this.getAttributes();
   }
 
@@ -71,6 +74,10 @@ export class FacilitiesEditComponent implements OnInit {
 
 
   submitRequest() {
+    if (this.facility.activeRequestId != null){
+      this.snackBar.open(this.errorRequestAlreadyExists, null, {duration: 6000});
+      return
+    }
 
     let perunAttributes: PerunAttribute[] = [];
 
@@ -79,8 +86,8 @@ export class FacilitiesEditComponent implements OnInit {
     this.items.forEach(i => {
       let attr = i.getAttribute();
       let perunAttr = new PerunAttribute(attr.value, attr.urn);
-      if(!i.hasCorrectValue()){
-        this.snackBar.open(this.errorWronglyFilledItem, null,{duration: 6000})
+      if (!i.hasCorrectValue()) {
+        this.snackBar.open(this.errorWronglyFilledItem, null, {duration: 6000});
         allGood = false;
         return
       }

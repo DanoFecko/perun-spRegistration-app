@@ -86,8 +86,8 @@
       "MOVE_TO_PRODUCTION": "Přesunout do produkce"
     },
     "CHANGED_TO_WFC": "Status žádosti změnen na 'Čeká na změny'",
-    "SHOW_MORE": "Ukáž víc",
-    "SHOW_LESS": "Ukáž míň",
+    "SHOW_MORE": "Zobrazit víc",
+    "SHOW_LESS": "Zobrazit míň",
     "COMMENTS_FROM_ADMIN": "Komentáře od administrátora",
     "SET_WFC": "Status nastaven na 'Čeká na změny'",
     "APPROVED": "Žádost schválena",
@@ -110,6 +110,7 @@
     "DELETE_FACILITY": "Odebrat Službu",
     "EDIT_FACILITY": "Editovat Službu",
     "ADD_ADMIN": "Přidat administrátora",
+    "EDIT_ADMIN": "Změnit administrátora",
     "MOVE_TO_PRODUCTION" : "Přesunout do produkce",
     "MOVE_TO_PRODUCTION_TITLE_1" : "Přesunout Službu #",
     "MOVE_TO_PRODUCTION_TITLE_2" : "do produkce",
@@ -136,6 +137,7 @@
     "NEW_VALUES_ERROR_MESSAGE": "Vyskytla se chyba",
     "SUCCESSFULLY_SUBMITTED_MESSAGE": "Facility byla uložená",
     "SUCCESSFULLY_SUBMITTED_ACTION": "Zobraz",
-    "WRONGLY_FILLED_ITEM": "Jedna nebo víc polí není vyplněna správne"
+    "WRONGLY_FILLED_ITEM": "Jedna nebo víc polí není vyplněna správne",
+    "ERROR_REQUEST_ALREADY_EXISTS": "Pro tuhle službu, již existuje žádost na její editaci"
   }
 }

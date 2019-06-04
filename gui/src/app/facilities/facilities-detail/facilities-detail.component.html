@@ -36,7 +36,7 @@
           <th mat-header-cell *matHeaderCellDef>{{'FACILITIES.FACILITY_DETAIL_ITEM_NAME' | translate}}</th>
           <td mat-cell *matCellDef="let attribute" class="font-thick">{{attribute.fullName}}</td>
         </ng-container>
-        <ng-container matColumnDef="value" >
+        <ng-container matColumnDef="value">
           <th mat-header-cell *matHeaderCellDef>{{'FACILITIES.FACILITY_DETAIL_ITEM_VALUE' | translate}}</th>
           <td mat-cell *matCellDef="let attribute">
             <div *ngIf="attribute.value == null; else notNull" class="font-italic text-muted">
@@ -52,10 +52,11 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover-dark"></tr>
       </table>
       <div class="mt-4">
+
+        <button class="ml-2" mat-raised-button color="warn" (click)="openDeleteDialog()">
+          {{'FACILITIES.DELETE_FACILITY' | translate}}
+        </button>
         <div class="pull-right">
-          <button class="ml-2" mat-raised-button color="warn" (click)="openDeleteDialog()">
-            {{'FACILITIES.DELETE_FACILITY' | translate}}
-          </button>
           <button class="ml-2" mat-raised-button [routerLink]="['/facilities/edit', facility.id]">
             {{'FACILITIES.EDIT_FACILITY' | translate}}
           </button>

@@ -112,6 +112,7 @@
     "DELETE_FACILITY": "Remove service",
     "EDIT_FACILITY": "Modify settings",
     "ADD_ADMIN": "Add administrator",
+    "EDIT_ADMIN": "Edit administrator",
     "MOVE_TO_PRODUCTION" : "Move to production",
     "MOVE_TO_PRODUCTION_TITLE_1" : "Transfer service #",
     "MOVE_TO_PRODUCTION_TITLE_2" : "to production",
@@ -138,6 +139,7 @@
     "NEW_VALUES_ERROR_MESSAGE": "error",
     "SUCCESSFULLY_SUBMITTED_MESSAGE": "Facility has been submitted",
     "SUCCESSFULLY_SUBMITTED_ACTION": "Show",
-    "WRONGLY_FILLED_ITEM": "One or more fields are not filled correctly"
+    "WRONGLY_FILLED_ITEM": "One or more fields are not filled correctly",
+    "ERROR_REQUEST_ALREADY_EXISTS": "Request to change this service already exists"
   }
 }
