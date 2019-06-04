@@ -39,7 +39,7 @@ import { RequestActionPipe } from './request-action.pipe';
     RequestStatusPipe,
     RequestActionPipe,
     AllRequestsComponent,
-    RequestDetailDialogComponent
+    RequestDetailDialogComponent,
   ],
   entryComponents: [
     RequestDetailDialogComponent
